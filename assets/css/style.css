@@ -1,0 +1,13 @@
+.col-12.col-md-4 {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
