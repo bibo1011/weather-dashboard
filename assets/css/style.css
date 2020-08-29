@@ -12,7 +12,7 @@
     padding: 0;
 } */
 
-.p {
+.span {
     border: 1px solid;
     margin: 0 0 0 8px;
     padding: 20px;
@@ -23,4 +23,39 @@
 .city {
     font: 50px;
     font-weight: bold;
+}
+#container {
+    border:1px solid green;
+}
+#name {
+    /* border: 1px solid green;
+    border-radius: 5px; */
+    
+    padding-left: 30px;
+    padding-top: 20px;
+    
+}
+#temp {
+    border-left: green;
+    border-right: green;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+#humidity {
+    border-left: green;
+    border-right: green;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+#wind {
+    border-left: green;
+    border-right: green;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+#uv {
+    border-left: green;
+    border-right: green;
+    padding-left: 30px;
+    padding-top: 20px;
 }

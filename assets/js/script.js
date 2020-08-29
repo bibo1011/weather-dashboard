@@ -1,7 +1,15 @@
-
-// search 
+// search on enter key
+var input = document.getElementById("city");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("myBtn").click();
+            }
+    });
+// search on click
 function citySearch (){
     var searchCity = document.querySelector("#city").value;
+    
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchCity + '&units=imperial&appid=7cb9d1b9e692149f5ce8f4913f261ae6')
     .then(function(response){
@@ -16,7 +24,7 @@ function citySearch (){
         localStorage.setItem("city", searchCity);
         console.log(searchCity);
         document.getElementById("history").innerHTML +=
-        "<div> <div class=\"p\">" + searchCity;
+        "<div> <div class=\"span\">" + searchCity;
 
         // weather
         var weatherSrc = response;
@@ -26,11 +34,11 @@ function citySearch (){
         document.getElementById("name").innerHTML = 
         "<div> <div class=\"h1\">" + weatherSrc.name;
         document.getElementById("temp").innerHTML = 
-        "<div> <div class=\"h3\">" + "Temperature: " + weatherSrc.main.temp + " ℉";
+        "<div> <div class=\"h5\">" + "Temperature: " + weatherSrc.main.temp + " ℉";
         document.getElementById("humidity").innerHTML = 
-        "<div> <div class=\"h3\">" + "Humidity: " + weatherSrc.main.humidity + " %";
+        "<div> <div class=\"h5\">" + "Humidity: " + weatherSrc.main.humidity + " %";
         document.getElementById("wind").innerHTML = 
-        "<div> <div class=\"h3\">" + "Wind Speed: " + weatherSrc.wind.speed + " mph";
+        "<div> <div class=\"h5\">" + "Wind Speed: " + weatherSrc.wind.speed + " mph";
         
         return fetch(
             'https://api.openweathermap.org/data/2.5/uvi?appid=7cb9d1b9e692149f5ce8f4913f261ae6&lat=' + 
@@ -44,7 +52,7 @@ function citySearch (){
             console.log(response);    
         
         document.getElementById("uv").innerHTML = 
-        "<div> <div class=\"h3\">" + "UV Index: " + response.value + "%";
+        "<div> <div class=\"h5\">" + "UV Index: " + response.value;
 
         })
     

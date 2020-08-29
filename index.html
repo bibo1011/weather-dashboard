@@ -11,25 +11,25 @@
     <header>
         <h1 class="bg-dark text-light text-center py-4 my-0">Weather Dashboard</h1>
     </header>
-    <div class="container row no-gutters">
-        <div class="col-4 bg-light">
-           <h3 class="ml-2">Search for a City:</h3>
-            <div class="input-group-append ml-2"> 
-                <input type="text" class="form-control" placeholder="City" id="city" value="Manila">
-                <button class="btn btn-outline-primary" onclick="citySearch()"><img src="./assets/images/20-20-b7763c75eb414545fba10bdd53cfbe2f.png" alt="search"></button>
+    <div class="container ml-0 mr-0">
+        <div class="row">
+            <div class="col-4 bg-light">
+            <h3 class="ml-2">Search for a City:</h3>
+                <div class="input-group-append ml-2"> 
+                    <input type="text" class="form-control" placeholder="City" id="city" value="Manila">
+                    <button id="myBtn" class="btn btn-outline-primary" onclick="citySearch()"><img src="./assets/images/20-20-b7763c75eb414545fba10bdd53cfbe2f.png" alt="search"></button>
+                </div>
+                <div id="history"></div>
             </div>
-            <div id="history"></div>
-        </div>
-        <div class="col-8 border-info rounded">
-            <div id="name"></div>
-            <div id="temp"></div>
-            <div id="humidity"></div>
-            <div id="wind"></div>
-            <div id="uv"></div>
-        </div>
+            <div class="col-8 mt-4">
+                <div id="name"></div>
+                <div id="temp"></div>
+                <div id="humidity"></div>
+                <div id="wind"></div>
+                <div id="uv"></div>
+            </div>
         </div>
     </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
