@@ -32,19 +32,22 @@ function citySearch (){
         document.getElementById("wind").innerHTML = 
         "<div> <div class=\"h3\">" + "Wind Speed: " + weatherSrc.wind.speed + " mph";
         
-        // return fetch('https://api.openweathermap.org/data/2.5/uvi?lat=' + uvLat + '&lon=' + uvLon + '/weather?q=' + searchCity + '&units=imperial&appid=7cb9d1b9e692149f5ce8f4913f261ae6')
-        // .then(function(response){
-        //     console.log(response);
-        //     return response.json();
-        // })
-        // .then(function(response){
-        //     console.log(response);    
+        return fetch(
+            'https://api.openweathermap.org/data/2.5/uvi?appid=7cb9d1b9e692149f5ce8f4913f261ae6&lat=' + 
+            uvLat + '&lon=' + uvLon);
+        })
+        .then(function(response){
+        console.log(response);
+        return response.json();
+        })
+        .then(function(response){
+            console.log(response);    
         
-        // document.getElementById("uv").innerHTML = 
-        // "<div> <div class=\"h3\">" + "UV Index: " + response.value;
+        document.getElementById("uv").innerHTML = 
+        "<div> <div class=\"h3\">" + "UV Index: " + response.value + "%";
 
-        // })
-    })
+        })
+    
     // document.querySelector("#weather").appendChild(weatherSrc);
     // document.getElementById("weather").innerHTML =
     // "<div> <div class=\"p\">" + weatherSrc;
