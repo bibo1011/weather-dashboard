@@ -65,13 +65,49 @@ function citySearch (){
         return response.json();
         })
         .then(function(response){
-            console.log(response);    
-        
-        document.getElementById("uv").innerHTML = 
-        "<div> <div class=\"h5\">" + "UV Index: " + response.value;
+            console.log(response);
+            
+        if (response.value <= 2.99){
+            var uv = document.createElement("h5");
+            var uvIndex = response.value;
+            uv.setAttribute("h5", uvIndex);
+            document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
+            document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.backgroundColor = "green";  
+        } else if (response.value >= 3 && response.value <= 5.99) {
+            var uv = document.createElement("h5");
+            var uvIndex = response.value;
+            uv.setAttribute("h5", uvIndex);
+            document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
+            document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.backgroundColor = "yellow";  
+        } else if (response.value >= 6 && response.value <= 7.99) {
+            var uv = document.createElement("h5");
+            var uvIndex = response.value;
+            uv.setAttribute("h5", uvIndex);
+            document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
+            document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.backgroundColor = "orange";  
+        } else if (response.value >= 8 && response.value <= 10.99) {
+            var uv = document.createElement("h5");
+            var uvIndex = response.value;
+            uv.setAttribute("h5", uvIndex);
+            document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
+            document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.backgroundColor = "red";  
+        } else if (response.value >= 11){
+            var uv = document.createElement("h5");
+            var uvIndex = response.value;
+            uv.setAttribute("h5", uvIndex);
+            document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
+            document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.backgroundColor = "purple"; 
+        }
+        // document.getElementById("uv").innerHTML 
+        // = "<div> <div class=\"h5\">" + "UV Index: " + response.value;
 
-        // 5-day forecast
-        document.getElementById("5-day").innerHTML =
+        // fiveDay forecast
+        document.getElementById("fiveDay").innerHTML =
         "<div> <div class=\"h2\">" + "5-Day Forecast:";
 
         })
@@ -84,10 +120,6 @@ function citySearch (){
         })
         .then(function(response){
             console.log(response)
-
-        // var object1 = response.list[0]
-        // var day1 = Object.values(object1)
-        
         
         // day 1 forcast
         // date
