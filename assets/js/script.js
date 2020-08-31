@@ -31,6 +31,7 @@ function citySearch (){
         document.getElementById("history").innerHTML +=
         "<div> <div class=\"span\">" + searchCity;
 
+
         // weather
         var weatherSrc = response;
         var uvLon = weatherSrc.coord.lon;
@@ -49,16 +50,18 @@ function citySearch (){
         //     document.body.appendChild(img);
 
         
-        var iconEl  = document.createElement('img');
-        var iconSrc = weatherSrc.weather[0].icon;
-        var iconUrl = "http://openweathermap.org/img/w/" + iconSrc + ".png";
-        iconEl.setAttribute('img', iconSrc);
-        document.querySelector('#name').innerHTML = iconUrl;
-        document.querySelector('#name').appendChild(iconEl);
+        // var iconEl  = document.createElement('img');
+        var iconCode = weatherSrc.weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+        $("#name").html("<img src='" + iconUrl  + "'>");
+        // iconEl.setAttribute('src', iconUrl);
+        // document.querySelector('#name').innerHTML = '';
+        // document.querySelector('#name').appendChild(iconUrl);
+        // console.log(iconUrl)
 
         document.getElementById("name").style.color = "blue"
         document.getElementById("name").innerHTML = 
-        "<div> <div class=\"h1\">" + weatherSrc.name + ' (' + currentDate + ') ';
+        "<div> <div class=\"h1\">" + weatherSrc.name + ' (' + currentDate + ') ' + "<img src='" + iconUrl  + "'>";
         document.getElementById("temp").innerHTML = 
         "<div> <div class=\"h5\">" + "Temperature: " + weatherSrc.main.temp + " ℉";
         document.getElementById("humidity").innerHTML = 
@@ -153,21 +156,21 @@ function citySearch (){
         var cloudsSrc = response.list[0].clouds;
         clouds.setAttribute("p", cloudsSrc);
         document.querySelector('#clouds0').innerHTML = cloudsSrc;
-        document.querySelector('#clouds0').appendChild(date);
+        document.querySelector('#clouds0').appendChild(clouds);
             
         // temp 
         var temp = document.createElement("p");
         var tempSrc = response.list[0].main.temp;
         temp.setAttribute("p", tempSrc);
         document.querySelector('#temp0').innerHTML = tempSrc + " ℉";
-        document.querySelector('#temp0').appendChild(date);
+        document.querySelector('#temp0').appendChild(temp);
             
         // humidity 
         var humidity = document.createElement("p");
         var humiditySrc = response.list[0].main.humidity;
         humidity.setAttribute("p", humiditySrc);
         document.querySelector('#humidity0').innerHTML = humiditySrc + " %";
-        document.querySelector('#humidity0').appendChild(date);
+        document.querySelector('#humidity0').appendChild(humidity);
         
         // day 2 forecast
         // date 
@@ -183,21 +186,21 @@ function citySearch (){
         var cloudsSrc = response.list[1].clouds;
         clouds.setAttribute("p", cloudsSrc);
         document.querySelector('#clouds1').innerHTML = cloudsSrc;
-        document.querySelector('#clouds1').appendChild(date);
+        document.querySelector('#clouds1').appendChild(clouds);
             
         // temp 
         var temp = document.createElement("p");
         var tempSrc = response.list[1].main.temp;
         temp.setAttribute("p", tempSrc);
         document.querySelector('#temp1').innerHTML = tempSrc + " ℉";
-        document.querySelector('#temp1').appendChild(date);
+        document.querySelector('#temp1').appendChild(temp);
             
         // humidity 
         var humidity = document.createElement("p");
         var humiditySrc = response.list[1].main.humidity;
         humidity.setAttribute("p", humiditySrc);
         document.querySelector('#humidity1').innerHTML = humiditySrc + " %";
-        document.querySelector('#humidity1').appendChild(date);
+        document.querySelector('#humidity1').appendChild(humidity);
 
         // day 3 forecast
         // date 
@@ -213,21 +216,21 @@ function citySearch (){
         var cloudsSrc = response.list[2].clouds;
         clouds.setAttribute("p", cloudsSrc);
         document.querySelector('#clouds2').innerHTML = cloudsSrc;
-        document.querySelector('#clouds2').appendChild(date);
+        document.querySelector('#clouds2').appendChild(clouds);
             
         // temp 
         var temp = document.createElement("p");
         var tempSrc = response.list[2].main.temp;
         temp.setAttribute("p", tempSrc);
         document.querySelector('#temp2').innerHTML = tempSrc + " ℉";
-        document.querySelector('#temp2').appendChild(date);
+        document.querySelector('#temp2').appendChild(temp);
             
         // humidity 
         var humidity = document.createElement("p");
         var humiditySrc = response.list[2].main.humidity;
         humidity.setAttribute("p", humiditySrc);
         document.querySelector('#humidity2').innerHTML = humiditySrc + " %";
-        document.querySelector('#humidity2').appendChild(date);
+        document.querySelector('#humidity2').appendChild(humidity);
 
         // day 4 forecast
         // date 
@@ -243,21 +246,21 @@ function citySearch (){
         var cloudsSrc = response.list[3].clouds;
         clouds.setAttribute("p", cloudsSrc);
         document.querySelector('#clouds3').innerHTML = cloudsSrc;
-        document.querySelector('#clouds3').appendChild(date);
+        document.querySelector('#clouds3').appendChild(clouds);
             
         // temp 
         var temp = document.createElement("p");
         var tempSrc = response.list[3].main.temp;
         temp.setAttribute("p", tempSrc);
         document.querySelector('#temp3').innerHTML = tempSrc + " ℉";
-        document.querySelector('#temp3').appendChild(date);
+        document.querySelector('#temp3').appendChild(temp);
             
         // humidity 
         var humidity = document.createElement("p");
         var humiditySrc = response.list[3].main.humidity;
         humidity.setAttribute("p", humiditySrc);
         document.querySelector('#humidity3').innerHTML = humiditySrc + " %";
-        document.querySelector('#humidity3').appendChild(date);
+        document.querySelector('#humidity3').appendChild(humidity);
 
         // day 5 forecast
         // date 
@@ -273,21 +276,21 @@ function citySearch (){
         var cloudsSrc = response.list[4].clouds;
         clouds.setAttribute("p", cloudsSrc);
         document.querySelector('#clouds4').innerHTML = cloudsSrc;
-        document.querySelector('#clouds4').appendChild(date);
+        document.querySelector('#clouds4').appendChild(clouds);
             
         // temp 
         var temp = document.createElement("p");
         var tempSrc = response.list[4].main.temp;
         temp.setAttribute("p", tempSrc);
         document.querySelector('#temp4').innerHTML = tempSrc + " ℉";
-        document.querySelector('#temp4').appendChild(date);
+        document.querySelector('#temp4').appendChild(temp);
             
         // humidity 
         var humidity = document.createElement("p");
         var humiditySrc = response.list[4].main.humidity;
         humidity.setAttribute("p", humiditySrc);
         document.querySelector('#humidity4').innerHTML = humiditySrc + " %";
-        document.querySelector('#humidity4').appendChild(date);
+        document.querySelector('#humidity4').appendChild(humidity);
        
     })
 
