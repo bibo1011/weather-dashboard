@@ -10,7 +10,8 @@ var input = document.getElementById("city");
 function citySearch (){
     var searchCity = document.querySelector("#city").value;
     if (searchCity === '') {
-        // alert("enter city");
+        alert("enter city");
+        cleaInputs();
         citySearch();
     }
     
@@ -21,7 +22,7 @@ function citySearch (){
         return response.json();
     })
     .then(function(response){
-        console.log(response);
+        console.log(response.weather[0].icon);
     
 
         // history
@@ -38,16 +39,26 @@ function citySearch (){
         console.log(currentDate);
        
         // var iconImg = document.createElement('img')
-        // var iconSrc = weatherSrc.weather[0].icon
-        // var iconUrl = "http://openweathermap.org/img/w/" + iconSrc + ".png";
-        // iconImg.setAttribute('img', iconSrc)
-        // document.querySelector('.icon').innerhtml = ""
-        // document.querySelector(".icon").appendChild(iconImg)
+        
+        
+        // var val = document.getElementById('imagename').value,
+        //         src = 'http://webpage.com/images/' + val +'.png',
+        //         img = document.createElement('img');
+
+        //     img.src = src;
+        //     document.body.appendChild(img);
 
         
-        
+        var iconEl  = document.createElement('img');
+        var iconSrc = weatherSrc.weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/w/" + iconSrc + ".png";
+        iconEl.setAttribute('img', iconSrc);
+        document.querySelector('#name').innerHTML = iconUrl;
+        document.querySelector('#name').appendChild(iconEl);
+
+        document.getElementById("name").style.color = "blue"
         document.getElementById("name").innerHTML = 
-        "<div> <div class=\"h1\">" + weatherSrc.name + ' (' + currentDate + ')';
+        "<div> <div class=\"h1\">" + weatherSrc.name + ' (' + currentDate + ') ';
         document.getElementById("temp").innerHTML = 
         "<div> <div class=\"h5\">" + "Temperature: " + weatherSrc.main.temp + " ℉";
         document.getElementById("humidity").innerHTML = 
@@ -73,6 +84,7 @@ function citySearch (){
             uv.setAttribute("h5", uvIndex);
             document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
             document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.fontSize = "20px";  
             document.getElementById("uv").style.backgroundColor = "green";  
         } else if (response.value >= 3 && response.value <= 5.99) {
             var uv = document.createElement("h5");
@@ -80,6 +92,7 @@ function citySearch (){
             uv.setAttribute("h5", uvIndex);
             document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
             document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.fontSize = "20px";  
             document.getElementById("uv").style.backgroundColor = "yellow";  
         } else if (response.value >= 6 && response.value <= 7.99) {
             var uv = document.createElement("h5");
@@ -87,6 +100,7 @@ function citySearch (){
             uv.setAttribute("h5", uvIndex);
             document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
             document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.fontSize = "20px";  
             document.getElementById("uv").style.backgroundColor = "orange";  
         } else if (response.value >= 8 && response.value <= 10.99) {
             var uv = document.createElement("h5");
@@ -94,6 +108,7 @@ function citySearch (){
             uv.setAttribute("h5", uvIndex);
             document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
             document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.fontSize = "20px";  
             document.getElementById("uv").style.backgroundColor = "red";  
         } else if (response.value >= 11){
             var uv = document.createElement("h5");
@@ -101,12 +116,15 @@ function citySearch (){
             uv.setAttribute("h5", uvIndex);
             document.getElementById("uv").innerHTML = "UV Index: " + uvIndex;
             document.getElementById("uv").appendChild(uv)
+            document.getElementById("uv").style.fontSize = "20px";  
             document.getElementById("uv").style.backgroundColor = "purple"; 
         }
+        //  not color-coded uv index
         // document.getElementById("uv").innerHTML 
         // = "<div> <div class=\"h5\">" + "UV Index: " + response.value;
 
         // fiveDay forecast
+        document.getElementById("fiveDay").style.color = "grey"
         document.getElementById("fiveDay").innerHTML =
         "<div> <div class=\"h2\">" + "5-Day Forecast:";
 
