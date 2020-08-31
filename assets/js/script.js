@@ -38,26 +38,11 @@ function citySearch (){
         var uvLat = weatherSrc.coord.lat;
         var currentDate = moment().format("MM/DD/YYYY");
         console.log(currentDate);
-       
-        // var iconImg = document.createElement('img')
-        
-        
-        // var val = document.getElementById('imagename').value,
-        //         src = 'http://webpage.com/images/' + val +'.png',
-        //         img = document.createElement('img');
-
-        //     img.src = src;
-        //     document.body.appendChild(img);
-
-        
-        // var iconEl  = document.createElement('img');
+    
+           
         var iconCode = weatherSrc.weather[0].icon;
         var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
-        $("#name").html("<img src='" + iconUrl  + "'>");
-        // iconEl.setAttribute('src', iconUrl);
-        // document.querySelector('#name').innerHTML = '';
-        // document.querySelector('#name').appendChild(iconUrl);
-        // console.log(iconUrl)
+    
 
         document.getElementById("name").style.color = "blue"
         document.getElementById("name").innerHTML = 
@@ -152,11 +137,10 @@ function citySearch (){
         document.querySelector("#date0").appendChild(date);
 
         // clouds 
-        var clouds = document.createElement("p");
-        var cloudsSrc = response.list[0].clouds;
-        clouds.setAttribute("p", cloudsSrc);
-        document.querySelector('#clouds0').innerHTML = cloudsSrc;
-        document.querySelector('#clouds0').appendChild(clouds);
+        var cloudsCode = response.list[0].weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/w/" + cloudsCode + ".png";
+        document.getElementById("clouds0").innerHTML = 
+        "<img src='" + iconUrl  + "'>";
             
         // temp 
         var temp = document.createElement("p");
@@ -182,11 +166,10 @@ function citySearch (){
         document.querySelector("#date1").appendChild(date);
 
         // clouds 
-        var clouds = document.createElement("p");
-        var cloudsSrc = response.list[1].clouds;
-        clouds.setAttribute("p", cloudsSrc);
-        document.querySelector('#clouds1').innerHTML = cloudsSrc;
-        document.querySelector('#clouds1').appendChild(clouds);
+        var cloudsCode = response.list[1].weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/w/" + cloudsCode + ".png";
+        document.getElementById("clouds1").innerHTML = 
+        "<img src='" + iconUrl  + "'>";
             
         // temp 
         var temp = document.createElement("p");
@@ -212,12 +195,11 @@ function citySearch (){
         document.querySelector("#date2").appendChild(date);
 
         // clouds 
-        var clouds = document.createElement("p");
-        var cloudsSrc = response.list[2].clouds;
-        clouds.setAttribute("p", cloudsSrc);
-        document.querySelector('#clouds2').innerHTML = cloudsSrc;
-        document.querySelector('#clouds2').appendChild(clouds);
-            
+        var cloudsCode = response.list[2].weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/w/" + cloudsCode + ".png";
+        document.getElementById("clouds2").innerHTML = 
+        "<img src='" + iconUrl  + "'>";
+
         // temp 
         var temp = document.createElement("p");
         var tempSrc = response.list[2].main.temp;
@@ -242,11 +224,10 @@ function citySearch (){
         document.querySelector("#date3").appendChild(date);
 
         // clouds 
-        var clouds = document.createElement("p");
-        var cloudsSrc = response.list[3].clouds;
-        clouds.setAttribute("p", cloudsSrc);
-        document.querySelector('#clouds3').innerHTML = cloudsSrc;
-        document.querySelector('#clouds3').appendChild(clouds);
+        var cloudsCode = response.list[3].weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/w/" + cloudsCode + ".png";
+        document.getElementById("clouds3").innerHTML = 
+        "<img src='" + iconUrl  + "'>";
             
         // temp 
         var temp = document.createElement("p");
@@ -272,11 +253,10 @@ function citySearch (){
         document.querySelector("#date4").appendChild(date);
 
         // clouds 
-        var clouds = document.createElement("p");
-        var cloudsSrc = response.list[4].clouds;
-        clouds.setAttribute("p", cloudsSrc);
-        document.querySelector('#clouds4').innerHTML = cloudsSrc;
-        document.querySelector('#clouds4').appendChild(clouds);
+        var cloudsCode = response.list[4].weather[0].icon;
+        var iconUrl = "http://openweathermap.org/img/w/" + cloudsCode + ".png";
+        document.getElementById("clouds4").innerHTML = 
+        "<img src='" + iconUrl  + "'>";
             
         // temp 
         var temp = document.createElement("p");
